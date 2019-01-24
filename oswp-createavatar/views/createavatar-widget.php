@@ -1,15 +1,5 @@
 <!-- This file is used to markup the public-facing widget. -->
 
-<?php
-// Konfig Anfang
-/* MySQL Database */
-$CONF_db_server   = "localhost";		     //Your Database-Server
-$CONF_db_user  = "databaseuser";       	             // login
-$CONF_db_pass    = "password";     	     // password
-$CONF_db_database   = "opensimdatabasename"; // Name of BDD
-// Konfig Ende
-?>
-
 <!DOCTYPE html><html><head><meta charset="utf-8">
 
 <link id="main" rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" type="text/css" media="screen"/>
