@@ -3,6 +3,10 @@ oswp-createavatar ist ein Wordpress Plugin-Widget welches ein neuen Avatar in de
 
 Das Plugin ist noch nicht fertig.
 
+oswp was bedeutet das? OpenSimulator Wordpress um es kurz zu sagen.
+
+Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombinieren, zu erweitern oder zu ergänzen.
+
 Die Konfiguration muss in die Datei oscreateavatar-widget.php eingetragen werden.
 
 Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
