@@ -13,7 +13,7 @@
  * @wordpress-plugin
  * Plugin Name:       oswp-createavatar
  * Plugin URI:        https://github.com/BigManzai/oswp
- * Description:       OpenSim Avatar in der Datenbank anlegen.
+ * Description:       createavatar OpenSim Avatar anlegen.
  * Version:           1.0.0
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
@@ -76,12 +76,12 @@ class oswp_createavatar extends WP_Widget {
 		);
 
 		// Register admin styles and scripts
-		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
+		//add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
 
 		// Register site styles and scripts
-		add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_scripts' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_styles' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_scripts' ) );
 
 		// Refreshing the widget's cached output with each new post
 		add_action( 'save_post',    array( $this, 'flush_widget_cache' ) );
@@ -248,4 +248,9 @@ class oswp_createavatar extends WP_Widget {
 } // end class
 
 // TODO: Remember to change 'oswp_createavatar' to match the class name definition
-add_action( 'widgets_init', create_function( '', 'register_widget("oswp_createavatar");' ) );
+//add_action( 'widgets_init', create_function( '', 'register_widget("oswp_createavatar");' ) );
+
+function oswp_createavatar_register_widget() {
+register_widget('oswp_createavatar');
+}
+add_action('widgets_init', 'oswp_createavatar_register_widget');
