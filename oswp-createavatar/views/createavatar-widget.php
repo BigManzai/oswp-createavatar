@@ -62,17 +62,42 @@ UserAccounts
   <fieldset>
     <?php echo esc_html__( 'Vorname :', 'oswp-createavatar' )."<br>"; ?>
     <input type="text" name="osVorname" placeholder="John"><br>
+	<?php
+		$osVorname = sanitize_text_field($_POST['osVorname']);
+		update_post_meta($post->ID, 'osVorname', $osVorname);
+	?>
+	
 	<?php echo esc_html__( 'Nachname :', 'oswp-createavatar' )."<br>"; ?>
     <input type="text" name="osNachname" placeholder="Doe"><br>
+	<?php
+		$osNachname = sanitize_text_field($_POST['osNachname']);
+		update_post_meta($post->ID, 'osNachname', $osNachname);
+	?>
 	<?php echo esc_html__( 'E-Mail :', 'oswp-createavatar' )."<br>"; ?>
     <input type="text" name="osEMail" placeholder="john@doe.com"><br>
+	<?php
+		$osEMail = sanitize_text_field($_POST['osEMail']);
+		update_post_meta($post->ID, 'osEMail', $osEMail);
+	?>
 	<?php echo esc_html__( 'Password :', 'oswp-createavatar' )."<br>"; ?>
     <input type="password" name="osPasswd1" placeholder="********"><br>
+	<?php
+		$osPasswd1 = sanitize_text_field($_POST['osPasswd1']);
+		update_post_meta($post->ID, 'osPasswd1', $osPasswd1);
+	?>
 	<?php echo esc_html__( 'Password wiederholung :', 'oswp-createavatar' )."<br>"; ?>
     <input type="password" name="osPasswd" placeholder="********"><br>
+	<?php
+		$osPasswd = sanitize_text_field($_POST['osPasswd']);
+		update_post_meta($post->ID, 'osPasswd', $osPasswd);
+	?>
     <?php echo esc_html__( 'Antispam ID :', 'oswp-createavatar' )."<br>"; ?>
 	<?php echo esc_html__( 'e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6', 'oswp-createavatar' )."<br>"; ?>
     <input type="text" name="oscaptcha" placeholder="Antispam ID"><br><br>
+	<?php
+		$oscaptcha = sanitize_text_field($_POST['oscaptcha']);
+		update_post_meta($post->ID, 'oscaptcha', $oscaptcha);
+	?>
 	
     <input type="submit" value="Submit">
   </fieldset>
