@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: oswp-createavatar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 07:12+0000\n"
+"PO-Revision-Date: 2019-06-28 09:30+0200\n"
+"Last-Translator: Manni <openmanniland@gmx.de>\n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2\n"
+
+#: views/createavatar-admin.php:38
+msgid "  MySQL Database:"
+msgstr " Base de données MySQL:"
+
+#: views/createavatar-admin.php:31
+msgid "  MySQL Server IP:"
+msgstr " IP du serveur MySQL:"
+
+#: views/createavatar-admin.php:45
+msgid "  MySQL User:"
+msgstr " Utilisateur MySQL:"
+
+#: views/createavatar-admin.php:24
+msgid "  OpenSim Name:"
+msgstr " Nom OpenSim:"
+
+#: views/createavatar-admin.php:52
+msgid "  Password:"
+msgstr " mot de passe:"
+
+#: views/createavatar-widget.php:73
+msgid "Antispam ID :"
+msgstr "Identifiant antispam :"
+
+#. Description of the plugin
+msgid "Create OpenSimulator Avatar. Not protected!!!"
+msgstr "Créez un avatar OpenSimulator. Non protégé !!!"
+
+#: views/createavatar-widget.php:67
+msgid "E-Mail :"
+msgstr "E-Mail :"
+
+#: views/createavatar-widget.php:74
+msgid "e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6"
+msgstr "e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6"
+
+#. Author URI of the plugin
+msgid "http://openmanniland.de"
+msgstr "http://openmanniland.de"
+
+#. URI of the plugin
+msgid "https://github.com/BigManzai/oswp"
+msgstr "https://github.com/BigManzai/oswp"
+
+#. Author of the plugin
+msgid "Manfred Aabye"
+msgstr "Manfred Aabye"
+
+#: views/createavatar-widget.php:65
+msgid "Nachname :"
+msgstr "Nom de famille :"
+
+#. Name of the plugin
+msgid "oswp-createavatar"
+msgstr "oswp-createavatar"
+
+#: views/createavatar-widget.php:69
+msgid "Password :"
+msgstr "Mot de passe :"
+
+#: views/createavatar-widget.php:71
+msgid "Password wiederholung :"
+msgstr "Répétition du mot de passe :"
+
+#: views/createavatar-widget.php:63
+msgid "Vorname :"
+msgstr "Prénom :"
