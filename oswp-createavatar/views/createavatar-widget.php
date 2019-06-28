@@ -1,99 +1,87 @@
 <!-- This file is used to markup the public-facing widget. -->
 
 <?php
-// Konfig Anfang
-/* MySQL Database */
-$CONF_db_server   = "localhost";		     //Your Database-Server
-$CONF_db_user  = "databaseuser";       	             // login
-$CONF_db_pass    = "password";     	     // password
-$CONF_db_database   = "opensimdatabasename"; // Name of BDD
-// Konfig Ende
+
+	global $wpdb;
+	// Fehler anzeigen
+	//$wpdb->show_errors();
+	
+	// Tabellenname erstellen
+	$tablename = $wpdb->prefix . "createavatar";
+	
+	// Auslesen der wp datenbank
+	$CONF_os_name = $wpdb->get_var( "SELECT CONF_os_name FROM $tablename" );
+	$CONF_db_server = $wpdb->get_var( "SELECT CONF_db_server FROM $tablename" );
+	$CONF_db_user = $wpdb->get_var( "SELECT CONF_db_user FROM $tablename" );
+	$CONF_db_pass = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
+	$CONF_db_database = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
+	
+	$con = mysqli_connect($CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database);
+	$res = mysqli_query($con, "SELECT * FROM regions");
+	
+// Gettext einfügen
+/* Make theme available for translation */
+	load_plugin_textdomain( 'oswp-createavatar', false, basename( dirname( __FILE__ ) ) . '/lang' );
+	
+/* # Database OpenSimulator 0.9.1
+UserAccounts
+	PrincipalID
+	ScopeID
+	FirstName
+	LastName
+	Email
+	ServiceURLs
+	Created
+	UserLevel
+	UserFlags
+	UserTitle
+	active */
+	
+	// $UserAccounts = "UserAccounts"
+	// $PrincipalID = "PrincipalID"
+	// $ScopeID = "ScopeID"
+	// $FirstName = "FirstName"
+	// $LastName = "LastName"
+	// $Email = "Email"
+	// $ServiceURLs = "ServiceURLs"
+	// $Created = "Created"
+	// $UserLevel = "UserLevel"
+	// $UserFlags = "UserFlags"
+	// $UserTitle = "UserTitle"
+	// $active = "active"
+
 ?>
-
-<!DOCTYPE html><html><head><meta charset="utf-8">
-
-<link id="main" rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" type="text/css" media="screen"/>
-
-<body>
-
-<h3>Avatar Registration</h3>
-
+<?php echo "<h1>".esc_html__( $CONF_os_name, 'oswp-createavatar' )."</h1><br>"; ?>
 
 
 <?php if (!isset($_POST['etape'])): ?>
 
-<form class="w3-container" action="" method="post">
+<form action="" method="post">
     <input type="hidden" name="etape" value="1" />
 	
-		
-<!-- General items	 -->
-
-	<div class="form-group">
-    <label for="base" class="w3-label w3-text-black control-label">Vorname :</b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="text" placeholder="John" name="osVorname" maxlength="40" />
-        </div>
-    </div>
-<br>	
+  <fieldset>
+    <?php echo esc_html__( 'Vorname :', 'oswp-createavatar' )."<br>"; ?>
+    <input type="text" name="osVorname" placeholder="John"><br>
+	<?php echo esc_html__( 'Nachname :', 'oswp-createavatar' )."<br>"; ?>
+    <input type="text" name="osNachname" placeholder="Doe"><br>
+	<?php echo esc_html__( 'E-Mail :', 'oswp-createavatar' )."<br>"; ?>
+    <input type="text" name="osEMail" placeholder="john@doe.com"><br>
+	<?php echo esc_html__( 'Password :', 'oswp-createavatar' )."<br>"; ?>
+    <input type="password" name="osPasswd1" placeholder="********"><br>
+	<?php echo esc_html__( 'Password wiederholung :', 'oswp-createavatar' )."<br>"; ?>
+    <input type="password" name="osPasswd" placeholder="********"><br>
+    <?php echo esc_html__( 'Antispam ID :', 'oswp-createavatar' )."<br>"; ?>
+	<?php echo esc_html__( 'e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6', 'oswp-createavatar' )."<br>"; ?>
+    <input type="text" name="oscaptcha" placeholder="Antispam ID"><br><br>
 	
-	<div class="form-group">
-    <label for="base" class="w3-label w3-text-black control-label">Nachname :</b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="text" placeholder="Doe" name="osNachname" maxlength="40" />
-        </div>
-    </div>
-<br>	
-		
-<!-- mysql database items -->	
-	
-    <div class="form-group">
-    <label for="osEMail" class="w3-label w3-text-black control-label">E-Mail :</b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="text" placeholder="john@doe.com" name="osEMail" maxlength="40" />
-        </div>
-    </div>
-<br>
-    <div class="form-group">
-    <label for="osPasswd1" class="w3-label w3-text-black control-label">Password :</b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="password" placeholder="*********" name="osPasswd1" maxlength="40" />
-        </div>
-    </div>
-<br>
-    <div class="form-group">
-    <label for="osPasswd" class="w3-label w3-text-black control-label">Password wiederholung :</b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="password" placeholder="*********" name="osPasswd" maxlength="40" />
-        </div>
-    </div>
-<br>
-	
-<!-- Captcha Anfang -->
-
-    <div class="form-group">
-    <label for="osPasswd" class="w3-label w3-text-black control-label">Antispam ID :  e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6   </b></label>
-        <div class="col-sm-4">
-            <input class="w3-input w3-border" type="text" placeholder="AntispamID" name="oscaptcha" maxlength="40" />
-        </div>
-    </div>
-<br>
-
-<!-- Captcha Ende -->
-
-	
-<!-- Registration Button -->
-	
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button class="w3-btn-block w3-black" type="submit" name="submit" value="Registration">Registration</button>
-        </div>
-    </div>
+    <input type="submit" value="Submit">
+  </fieldset>
 
 </form>
 
 <?php endif ?>
 	
-</div>
+
 
 <?php
 // UUID Generator Random UUID $benutzeruuid = uuidv4()
@@ -205,21 +193,19 @@ if (isset($_POST['etape']) AND $_POST['etape'] == 1)
        exit;
     }
  
-     if($oscaptcha != $oscaptchaid) 
-	{
-       echo 'Captcha Fehler:  ' . $oscaptcha . '   Richtig wäre:  ' . $oscaptchaid;
-       exit;
-    }
+     // if($oscaptcha != $oscaptchaid) 
+	// {
+       // echo 'Captcha Fehler:  ' . $oscaptcha . '   Richtig wäre:  ' . $oscaptchaid;
+       // exit;
+    // }
 	
 	
 // Datenbank öffnen
   $pdo = new PDO("mysql:host=$CONF_db_server;dbname=$CONF_db_database", $CONF_db_user, $CONF_db_pass);
-//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Avatar und Namen checken
  if(!$error) { 
  $statement = $pdo->prepare("SELECT * FROM UserAccounts WHERE FirstName = :FirstName AND LastName = :LastName");
- //$result = $statement->execute(array('FirstName' + 'LastName' => $osVorname + $osNachname));
  $result = $statement->execute(array('FirstName' => $osVorname, 'LastName' => $osNachname));
  $user = $statement->fetch();
  
@@ -228,7 +214,6 @@ if (isset($_POST['etape']) AND $_POST['etape'] == 1)
  exit;
  } 
  } 
-
 
 // E-Mail checken
   if(!filter_var($osEMail, FILTER_VALIDATE_EMAIL)) {
@@ -261,13 +246,11 @@ $neuer_user['UserLevel'] = '0';
 $neuer_user['UserFlags'] = '0';
 $neuer_user['UserTitle'] = '';
 $neuer_user['active'] = '1';
-
  
-// $statement = $pdo->prepare("INSERT INTO UserAccounts (email, vorname, nachname) VALUES (:email, :vorname, :nachname)");
+
 $statement = $pdo->prepare("INSERT INTO UserAccounts (PrincipalID, ScopeID, FirstName, LastName, Email, ServiceURLs, Created, UserLevel, UserFlags, UserTitle, active) VALUES (:PrincipalID, :ScopeID, :FirstName, :LastName, :Email, :ServiceURLs, :Created, :UserLevel, :UserFlags, :UserTitle, :active)");
 $statement->execute($neuer_user);  
  
-
 // UUID, passwordHash, passwordSalt, webLoginKey, accountType
 $neues_passwd = array();
 $neues_passwd['UUID']         = $benutzeruuid;
@@ -275,7 +258,6 @@ $neues_passwd['passwordHash'] = $osHash;
 $neues_passwd['passwordSalt'] = $osSalt;
 $neues_passwd['webLoginKey'] = '00000000-0000-0000-0000-000000000000';
 $neues_passwd['accountType'] = 'UserAccount';
-
  
 $statement = $pdo->prepare("INSERT INTO auth (UUID, passwordHash, passwordSalt, webLoginKey, accountType) VALUES (:UUID, :passwordHash, :passwordSalt, :webLoginKey, :accountType)");
 $statement->execute($neues_passwd);
@@ -287,7 +269,6 @@ $neuer_GridUser['HomeRegionID'] = '00000000-0000-0000-0000-000000000000';
 $neuer_GridUser['HomePosition'] = '<0,0,0>';
 $neuer_GridUser['LastRegionID'] = '00000000-0000-0000-0000-000000000000';
 $neuer_GridUser['LastPosition'] = '<0,0,0>';
-
  
 $statement = $pdo->prepare("INSERT INTO GridUser (UserID, HomeRegionID, HomePosition, LastRegionID, LastPosition) VALUES (:UserID, :HomeRegionID, :HomePosition, :LastRegionID, :LastPosition)");
 $statement->execute($neuer_GridUser);
@@ -565,4 +546,4 @@ $statement->execute($verzeichnisAll);
 $pdo = null;
 }
 ?>
-</body></html>
+

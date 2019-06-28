@@ -13,8 +13,8 @@
  * @wordpress-plugin
  * Plugin Name:       oswp-createavatar
  * Plugin URI:        https://github.com/BigManzai/oswp
- * Description:       createavatar OpenSim Avatar anlegen.
- * Version:           1.0.0
+ * Description:       Create OpenSimulator Avatar. Not protected!!!
+ * Version:           1.0.2
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
  * Text Domain:       oswp-createavatar
@@ -27,6 +27,26 @@
  // Prevent direct file access
 if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
+}
+
+
+//Load our translation files.
+	$wpterm_locale = array( 'de_DE' );
+	$this_locale = 'de_DE';
+	//$wpterm_locale = array( 'fr_FR' );
+	//$this_locale = 'fr_FR';
+	//$wpterm_locale = array( 'es_ES' );
+	//$this_locale = 'es_ES';
+	//$wpterm_locale = array( 'ru_RU' );
+	//$this_locale = 'ru_RU';
+
+
+//$this_locale = get_locale();
+if ( in_array( $this_locale, $wpterm_locale ) ) {
+	if ( file_exists( __DIR__ . "/lang/oswp-splash-{$this_locale}.mo" ) ) {
+		unload_textdomain( 'oswp-splash' );
+		load_textdomain( 'oswp-splash', __DIR__ . "/lang/oswp-splash-{$this_locale}.mo" );
+	}
 }
 
 // TODO: change 'oswp_createavatar' to the name of your plugin
@@ -42,7 +62,7 @@ class oswp_createavatar extends WP_Widget {
      * of text. Its value should match the Text Domain file header in the main
      * widget file.
      *
-     * @since    1.0.0
+     * @since    1.0.2
      *
      * @var      string
      */
@@ -94,7 +114,7 @@ class oswp_createavatar extends WP_Widget {
     /**
      * Return the widget slug.
      *
-     * @since    1.0.0
+     * @since    1.0.2
      *
      * @return    Plugin slug variable.
      */
