@@ -2,7 +2,7 @@ Das Plugin ist noch nicht fertig.
 
 Die Konfiguration funktioniert.
 
-# Database OpenSimulator 0.9.1
+Database OpenSimulator 0.9.1
 
     UserAccounts
 	    PrincipalID
