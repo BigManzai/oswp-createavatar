@@ -7,28 +7,18 @@ Diese Plugin Reihe ist dafür gedacht den OpenSimulator mit Wordpress zu kombini
 
 Plugin Widgets stehen nach dem aktivieren im Plugin Bereich  unter „Design“ „Widgets“ zur Verfügung.
 
-### Setup
+### Install
+Die Plugin stellen ein Widget zur verfügung.
 
-Die Plugins haben noch keine echte einstellmöglichkeit, sobald ich begriffen habe wie das geht werde ich diese hinzufügen.
+Nach dem Aktivieren im Theme bereich Widget, die Robust Datenbank eintragen.
 
-Unter „Plugins“ „Editor“ können die Plugins geändert werden.
+The plugin provide a widget.
 
-Hierzu muss erst rechts das „zu bearbeitende Plugin“ ausgewählt werden.
+After enabling in the Theme widget area, enter the Robust database.
 
-Unter „Plugin Dateien“ das Widget Plugin auswählen und die Zeile „// Konfig Anfang“ suchen.
+Le plugin fournit un widget.
 
-Hier die Daten die in der Robust.ini oder in der GridCommon.ini stehen eintragen.
-
-„localhost“ kann meist nur geändert werden wenn man auf dem Zielserver Externen mySQL zugriff erlaubt.
-
-Dort folgende Datenbank Einträge laut eurer OpenSim Konfiguration anpassen:
-
-      /* MySQL Database */
-      $CONF_db_server   = "localhost";		     //Your Database-Server
-      $CONF_db_user  = "databaseuser";       	             // login
-      $CONF_db_pass    = "password";     	     // password
-      $CONF_db_database   = "opensimdatabasename"; // Name of BDD
-      
+Après avoir activé la zone de widget Thème, entrez dans la base de données Robust.
 
 ### MySQL
 Sollte sich die Webseite nicht auf dem gleichen Server befinden wie OpenSim,
@@ -73,6 +63,5 @@ Siehe GNU General Public License 2 für weitere Details.
 
 http://www.gnu.de/documents/gpl-2.0.de.html
 
-
-### TODO: 
-Einstellungen über Wordpress funktionieren nicht.
+### TODO
+Sichern
