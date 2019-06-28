@@ -1,3 +1,5 @@
+# oswp-createavatar
+
 Das Plugin ist noch nicht ganz fertig.
 
 Die Konfiguration funktioniert, auch das anlegen von Avataren.
