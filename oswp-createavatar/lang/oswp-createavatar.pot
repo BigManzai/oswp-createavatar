@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oswp-createavatar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 07:12+0000\n"
+"POT-Creation-Date: 2019-06-28 08:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,44 +15,86 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.0; wp-5.2.2"
 
-#: views/createavatar-admin.php:38
-msgid "  MySQL Database:"
+#: views/createavatar-widget.php:62
+msgid "Vorname :"
 msgstr ""
 
-#: views/createavatar-admin.php:31
-msgid "  MySQL Server IP:"
+#: views/createavatar-widget.php:69
+msgid "Nachname :"
 msgstr ""
 
-#: views/createavatar-admin.php:45
-msgid "  MySQL User:"
+#: views/createavatar-widget.php:75
+msgid "E-Mail :"
+msgstr ""
+
+#: views/createavatar-widget.php:81
+msgid "Password :"
+msgstr ""
+
+#: views/createavatar-widget.php:87
+msgid "Password wiederholung :"
+msgstr ""
+
+#: views/createavatar-widget.php:93
+msgid "Antispam ID :"
+msgstr ""
+
+#: views/createavatar-widget.php:94
+msgid "e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6"
+msgstr ""
+
+#: views/createavatar-widget.php:184
+msgid "Vorname nicht mit einem Wert belegt, oder nicht gesetzt"
+msgstr ""
+
+#: views/createavatar-widget.php:190
+msgid "Nachname nicht mit einem Wert belegt, oder nicht gesetzt"
+msgstr ""
+
+#: views/createavatar-widget.php:196
+msgid "E-Mail nicht mit einem Wert belegt, oder nicht gesetzt"
+msgstr ""
+
+#: views/createavatar-widget.php:202 views/createavatar-widget.php:208
+msgid ""
+"Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht "
+"gesetzt"
+msgstr ""
+
+#: views/createavatar-widget.php:214
+msgid "Die Passwörter müssen übereinstimmen"
+msgstr ""
+
+#: views/createavatar-widget.php:220
+msgid "Captcha nicht mit einem Wert belegt, oder nicht gesetzt"
 msgstr ""
 
 #: views/createavatar-admin.php:24
 msgid "  OpenSim Name:"
 msgstr ""
 
+#: views/createavatar-admin.php:31
+msgid "  MySQL Server IP:"
+msgstr ""
+
+#: views/createavatar-admin.php:38
+msgid "  MySQL Database:"
+msgstr ""
+
+#: views/createavatar-admin.php:45
+msgid "  MySQL User:"
+msgstr ""
+
 #: views/createavatar-admin.php:52
 msgid "  Password:"
 msgstr ""
 
-#: views/createavatar-widget.php:73
-msgid "Antispam ID :"
+#. Name of the plugin
+msgid "oswp-createavatar"
 msgstr ""
 
 #. Description of the plugin
 msgid "Create OpenSimulator Avatar. Not protected!!!"
-msgstr ""
-
-#: views/createavatar-widget.php:67
-msgid "E-Mail :"
-msgstr ""
-
-#: views/createavatar-widget.php:74
-msgid "e3542ff9-5fd6-4ed0-a1ac-bccc1f3aa1c6"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://openmanniland.de"
 msgstr ""
 
 #. URI of the plugin
@@ -63,22 +105,6 @@ msgstr ""
 msgid "Manfred Aabye"
 msgstr ""
 
-#: views/createavatar-widget.php:65
-msgid "Nachname :"
-msgstr ""
-
-#. Name of the plugin
-msgid "oswp-createavatar"
-msgstr ""
-
-#: views/createavatar-widget.php:69
-msgid "Password :"
-msgstr ""
-
-#: views/createavatar-widget.php:71
-msgid "Password wiederholung :"
-msgstr ""
-
-#: views/createavatar-widget.php:63
-msgid "Vorname :"
+#. Author URI of the plugin
+msgid "http://openmanniland.de"
 msgstr ""
