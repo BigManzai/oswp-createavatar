@@ -1,6 +1,5 @@
-<!-- This file is used to markup the public-facing widget. -->
-
 <?php
+	// Version 1.0.4 by Manfred Aabye
 
 	global $wpdb;
 	// Fehler anzeigen
@@ -159,8 +158,6 @@ UserAccounts
 <?php
 if (isset($_POST['etape']) AND $_POST['etape'] == 1)
 {
-  
- 
     // wir schaffen unsere Variablen und alle Leerzeichen beiläufig entfernen	
 	$benutzeruuid = uuidv4();
 	$inventoryuuid = uuidv4();
@@ -180,44 +177,49 @@ if (isset($_POST['etape']) AND $_POST['etape'] == 1)
 
 	$osSalt = ospswdsalt();
 	$osHash = ospswdhash($osPasswd, $osSalt);
-	
+
 	// Programmabbruch bei fehlenden Angaben
     if (empty($osVorname)) 
 	{
-        echo 'Vorname nicht mit einem Wert belegt, oder nicht gesetzt<br>';
+        echo esc_html__( 'Vorname nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
 	    exit;
     }
 	
 	if (empty($osNachname)) 
 	{
-        echo 'Nachname nicht mit einem Wert belegt, oder nicht gesetzt<br>';
+        echo esc_html__( 'Nachname nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
 	    exit;
     }
 	
 	if (empty($osEMail)) 
 	{
-        echo 'E-Mail nicht mit einem Wert belegt, oder nicht gesetzt<br>';
+        echo esc_html__( 'E-Mail nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
 	    exit;
     }
 	
 	if (empty($osPasswd)) 
 	{
-        echo 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt<br>';
+        echo esc_html__( 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
 	    exit;
     }
 	
 	if (empty($osPasswd1)) 
 	{
-        echo 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt<br>';
+        echo esc_html__( 'Passwort oder Passwortwiederholung nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
 	    exit;
     }
 	
     if($osPasswd != $osPasswd1) 
 	{
-       echo 'Die Passwörter müssen übereinstimmen<br>';
+       echo esc_html__( 'Die Passwörter müssen übereinstimmen', 'oswp-createavatar' )."<br>";
        exit;
     }
  
+	if (empty($oscaptcha)) 
+	{
+        echo esc_html__( 'Captcha nicht mit einem Wert belegt, oder nicht gesetzt', 'oswp-createavatar' )."<br>";
+	    exit;
+    }
      // if($oscaptcha != $oscaptchaid) 
 	// {
        // echo 'Captcha Fehler:  ' . $oscaptcha . '   Richtig wäre:  ' . $oscaptchaid;
