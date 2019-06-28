@@ -1,6 +1,8 @@
-Das Plugin ist noch nicht fertig.
+Das Plugin ist noch nicht ganz fertig.
 
-Die Konfiguration funktioniert.
+Die Konfiguration funktioniert, auch das anlegen von Avataren.
+
+Der Avatar ist zwar eine Wolke, hat aber das Standart Inventar samt Avatar Asset, dies muss nur angezogen werden.
 
 Database OpenSimulator 0.9.1
 
