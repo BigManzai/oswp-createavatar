@@ -67,4 +67,6 @@ Siehe GNU General Public License 2 für weitere Details.
 http://www.gnu.de/documents/gpl-2.0.de.html
 
 ### TODO
-Sichern, Standard Assets werden nicht gefunden, sind aber im Verzeichnis und im cs source code.
+Absichern 
+
+Standard Assets werden nicht gefunden, sind aber im Verzeichnis und im cs source code.
