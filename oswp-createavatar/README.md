@@ -20,6 +20,12 @@ Database OpenSimulator 0.9.1
 	    UserFlags
 	    UserTitle
 	    active
+	    
+
+     Avatars
+        PrincipalID
+        Name
+        Value
 
 ### Todo
 UserAccounts - useraccounts? Old Version?
