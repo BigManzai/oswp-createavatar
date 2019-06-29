@@ -1,6 +1,6 @@
 # oswp-createavatar
 
-Version 1.0.7
+Version 1.0.8
 
 Das Plugin ist noch nicht fertig, es funktioniert aber schon.
 
