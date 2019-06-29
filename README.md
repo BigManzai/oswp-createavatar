@@ -1,4 +1,7 @@
 # oswp-createavatar
+
+Version 1.0.6
+
 Das Plugin ist noch nicht fertig, es funktioniert aber schon.
 
 Oswp was bedeutet das? OpenSimulator Wordpress um es kurz zu sagen.
