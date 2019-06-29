@@ -628,6 +628,9 @@ $VisualParams['Value'] = DEFAULT_AVATAR_PARAMS;
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
 $statement->execute($VisualParams);
 
+// OK bis hier
+
+/* 
 // Avatar Wearable0
 $Wearable0 = array();
 $Wearable0['PrincipalID'] = $benutzeruuid;
@@ -681,7 +684,7 @@ $Wearable5['Value'] = DEFAULT_ASSET_PANT;
 
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
 $statement->execute($Wearable5);
-
+ */
 //  ########################################  Avatar Anziehen Ende
 
 // Avatar Fertig Verbindung schließen
