@@ -1,6 +1,6 @@
 # oswp-createavatar
 
-Version 1.0.6
+Version 1.0.7
 
 Das Plugin ist noch nicht fertig, es funktioniert aber schon.
 
@@ -67,4 +67,4 @@ Siehe GNU General Public License 2 für weitere Details.
 http://www.gnu.de/documents/gpl-2.0.de.html
 
 ### TODO
-Sichern
+Sichern, Standard Assets werden nicht gefunden, sind aber im Verzeichnis und im cs source code.
