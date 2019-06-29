@@ -14,7 +14,7 @@
  * Plugin Name:       oswp-createavatar
  * Plugin URI:        https://github.com/BigManzai/oswp
  * Description:       Create OpenSimulator Avatar. Not protected!!!
- * Version:           1.0.2
+ * Version:           1.0.6
  * Author:            Manfred Aabye
  * Author URI:        http://openmanniland.de
  * Text Domain:       oswp-createavatar
