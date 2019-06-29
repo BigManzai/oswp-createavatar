@@ -63,11 +63,20 @@
 	{
 		// wir schaffen unsere Variablen
 		//$CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database 
-		$CONF_os_name  = $_POST['CONF_os_name']; //variable name, string value use: %s
-		$CONF_db_server  = $_POST['CONF_db_server']; //server http or IP, string value use: %s
-		$CONF_db_user  = $_POST['CONF_db_user']; //database user name, string value use: %s
-		$CONF_db_pass  = $_POST['CONF_db_pass']; //database password, string value use: %s
-		$CONF_db_database  = $_POST['CONF_db_database']; //database name, string value use: %s
+		$CONF_os_name  		= $_POST['CONF_os_name']; //variable name, string value use: %s
+		$CONF_db_server  	= $_POST['CONF_db_server']; //server http or IP, string value use: %s
+		$CONF_db_user  		= $_POST['CONF_db_user']; //database user name, string value use: %s
+		$CONF_db_pass  		= $_POST['CONF_db_pass']; //database password, string value use: %s
+		$CONF_db_database  	= $_POST['CONF_db_database']; //database name, string value use: %s
+		
+/* 		$CONF_os_SHAPE  	= $_POST['CONF_os_SHAPE']; //variable name, string value use: %s
+		$CONF_os_SKIN  		= $_POST['CONF_os_SKIN']; //variable name, string value use: %s
+		$CONF_os_HAIR  		= $_POST['CONF_os_HAIR']; //variable name, string value use: %s
+		$CONF_os_EYES  		= $_POST['CONF_os_EYES']; //variable name, string value use: %s
+		$CONF_os_SHIRT  	= $_POST['CONF_os_SHIRT']; //variable name, string value use: %s
+		$CONF_os_PANTS  	= $_POST['CONF_os_PANTS']; //variable name, string value use: %s
+		$CONF_os_USHIRT  	= $_POST['CONF_os_USHIRT']; //variable name, string value use: %s
+		$CONF_os_UPANTS  	= $_POST['CONF_os_UPANTS']; //variable name, string value use: %s */
 		
 		global $wpdb;
 		// Fehler anzeigen

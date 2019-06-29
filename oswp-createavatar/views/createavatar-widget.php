@@ -15,6 +15,15 @@
 	$CONF_db_pass = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
 	$CONF_db_database = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
+/* 	$CONF_os_SHAPE = $wpdb->get_var( "SELECT CONF_os_SHAPE FROM $tablename" );
+	$CONF_os_SKIN = $wpdb->get_var( "SELECT CONF_os_SKIN FROM $tablename" );
+	$CONF_os_HAIR = $wpdb->get_var( "SELECT CONF_os_HAIR FROM $tablename" );
+	$CONF_os_EYES = $wpdb->get_var( "SELECT CONF_os_EYES FROM $tablename" );
+	$CONF_os_SHIRT = $wpdb->get_var( "SELECT CONF_os_SHIRT FROM $tablename" );
+	$CONF_os_PANTS = $wpdb->get_var( "SELECT CONF_os_PANTS FROM $tablename" );
+	$CONF_os_USHIRT = $wpdb->get_var( "SELECT CONF_os_USHIRT FROM $tablename" );
+	$CONF_os_UPANTS = $wpdb->get_var( "SELECT CONF_os_UPANTS FROM $tablename" ); */
+	
 	$con = mysqli_connect($CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database);
 	$res = mysqli_query($con, "SELECT * FROM regions");
 	
@@ -61,6 +70,8 @@ define('DEFAULT_ASSET_HAIR',	'd342e6c0-b9d2-11dc-95ff-0800200c9a66');
 define('DEFAULT_ASSET_EYES',	'4bb6fa4d-1cd2-498a-a84c-95c1a0e745a7');
 define('DEFAULT_ASSET_SHIRT',	'00000000-38f9-1111-024e-222222111110');
 define('DEFAULT_ASSET_PANTS',	'00000000-38f9-1111-024e-222222111120');
+define('DEFAULT_ASSET_USHIRT',	'16499ebb-3208-ec27-2def-481881728f47');
+define('DEFAULT_ASSET_UPANTS',	'4ac2e9c7-3671-d229-316a-67717730841d');
 
 define('DEFAULT_AVATAR_HEIGHT', '1.690999');
 define('DEFAULT_AVATAR_PARAMS', '33,61,85,23,58,127,63,85,63,42,0,85,63,36,85,95,153,63,34,0,63,109,88,132,63,136,81,85,103,136,127,0,150,150,150,127,0,0,0,0,0,127,0,0,255,127,114,127,99,63,127,140,127,127,0,0,0,191,0,104,0,0,0,0,0,0,0,0,0,145,216,133,0,127,0,127,170,0,0,127,127,109,85,127,127,63,85,42,150,150,150,150,150,150,150,25,150,150,150,0,127,0,0,144,85,127,132,127,85,0,127,127,127,127,127,127,59,127,85,127,127,106,47,79,127,127,204,2,141,66,0,0,127,127,0,0,0,0,127,0,159,0,0,178,127,36,85,131,127,127,127,153,95,0,140,75,27,127,127,0,150,150,198,0,0,63,30,127,165,209,198,127,127,153,204,51,51,255,255,255,204,0,255,150,150,150,150,150,150,150,150,150,150,0,150,150,150,150,150,0,127,127,150,150,150,150,150,150,150,150,0,0,150,51,132,150,150,150');
@@ -630,61 +641,79 @@ $statement->execute($VisualParams);
 
 // OK bis hier
 
-/* 
-// Avatar Wearable0
-$Wearable0 = array();
-$Wearable0['PrincipalID'] = $benutzeruuid;
-$Wearable0['Name'] = 'Wearable 0:0';
-$Wearable0['Value'] = DEFAULT_ASSET_SHAPE;
+ 
+// Avatar DEFAULT_ASSET_SHAPE
+$DEFAULT_ASSET_SHAPE = array();
+$DEFAULT_ASSET_SHAPE['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_SHAPE['Name'] = 'Wearable 4:0';
+$DEFAULT_ASSET_SHAPE['Value'] = DEFAULT_ASSET_SHAPE;
 
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable0);
+$statement->execute($DEFAULT_ASSET_SHAPE);
 
-// Avatar Wearable1
-$Wearable1 = array();
-$Wearable1['PrincipalID'] = $benutzeruuid;
-$Wearable1['Name'] = 'Wearable 1:0';
-$Wearable1['Value'] = DEFAULT_ASSET_SKIN;
-
-$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable1);
-
-// Avatar Wearable2
-$Wearable2 = array();
-$Wearable2['PrincipalID'] = $benutzeruuid;
-$Wearable2['Name'] = 'Wearable 2:0';
-$Wearable2['Value'] = DEFAULT_ASSET_HAIR;
+// Avatar DEFAULT_ASSET_SKIN
+$DEFAULT_ASSET_SKIN = array();
+$DEFAULT_ASSET_SKIN['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_SKIN['Name'] = 'Wearable 6:0';
+$DEFAULT_ASSET_SKIN['Value'] = DEFAULT_ASSET_SKIN;
 
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable2);
+$statement->execute($DEFAULT_ASSET_SKIN);
 
-// Avatar Wearable3
-$Wearable3 = array();
-$Wearable3['PrincipalID'] = $benutzeruuid;
-$Wearable3['Name'] = 'Wearable 3:0';
-$Wearable3['Value'] = DEFAULT_ASSET_EYES;
-
-$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable3);
-
-// Avatar Wearable4
-$Wearable4 = array();
-$Wearable4['PrincipalID'] = $benutzeruuid;
-$Wearable4['Name'] = 'Wearable 4:0';
-$Wearable4['Value'] = DEFAULT_ASSET_SHIRT;
+// Avatar DEFAULT_ASSET_HAIR
+$DEFAULT_ASSET_HAIR = array();
+$DEFAULT_ASSET_HAIR['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_HAIR['Name'] = 'Wearable 2:0';
+$DEFAULT_ASSET_HAIR['Value'] = DEFAULT_ASSET_HAIR;
 
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable4);
+$statement->execute($DEFAULT_ASSET_HAIR);
 
-// Avatar Wearable5
-$Wearable5 = array();
-$Wearable5['PrincipalID'] = $benutzeruuid;
-$Wearable5['Name'] = 'Wearable 5:0';
-$Wearable5['Value'] = DEFAULT_ASSET_PANT;
+// Avatar DEFAULT_ASSET_EYES
+$DEFAULT_ASSET_EYES = array();
+$DEFAULT_ASSET_EYES['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_EYES['Name'] = 'Wearable 1:0';
+$DEFAULT_ASSET_EYES['Value'] = DEFAULT_ASSET_EYES;
 
 $statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
-$statement->execute($Wearable5);
- */
+$statement->execute($DEFAULT_ASSET_EYES);
+
+// Avatar DEFAULT_ASSET_SHIRT
+$DEFAULT_ASSET_SHIRT = array();
+$DEFAULT_ASSET_SHIRT['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_SHIRT['Name'] = 'Wearable 5:0';
+$DEFAULT_ASSET_SHIRT['Value'] = DEFAULT_ASSET_SHIRT;
+
+$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
+$statement->execute($DEFAULT_ASSET_SHIRT);
+
+// Avatar DEFAULT_ASSET_PANTS
+$DEFAULT_ASSET_PANTS = array();
+$DEFAULT_ASSET_PANTS['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_PANTS['Name'] = 'Wearable 3:0';
+$DEFAULT_ASSET_PANTS['Value'] = DEFAULT_ASSET_PANTS;
+
+$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
+$statement->execute($DEFAULT_ASSET_PANTS);
+
+// Avatar DEFAULT_ASSET_USHIRT
+$DEFAULT_ASSET_USHIRT = array();
+$DEFAULT_ASSET_USHIRT['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_USHIRT['Name'] = 'Wearable 7:0';
+$DEFAULT_ASSET_USHIRT['Value'] = DEFAULT_ASSET_USHIRT;
+
+$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
+$statement->execute($DEFAULT_ASSET_USHIRT);
+
+// Avatar DDEFAULT_ASSET_UPANTS
+$DEFAULT_ASSET_UPANTS = array();
+$DEFAULT_ASSET_UPANTS['PrincipalID'] = $benutzeruuid;
+$DEFAULT_ASSET_UPANTS['Name'] = 'Wearable 8:0';
+$DEFAULT_ASSET_UPANTS['Value'] = DEFAULT_ASSET_UPANTS;
+
+$statement = $pdo->prepare("INSERT INTO Avatars (PrincipalID,Name,Value) VALUES (:PrincipalID,:Name,:Value)");
+$statement->execute($DEFAULT_ASSET_UPANTS);
+
 //  ########################################  Avatar Anziehen Ende
 
 // Avatar Fertig Verbindung schließen
