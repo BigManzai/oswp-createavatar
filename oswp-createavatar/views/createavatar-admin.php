@@ -121,9 +121,24 @@
 		//$CONF_os_name, $CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database 
 		$CONF_os_name  		= $_POST['CONF_os_name']; //variable name, string value use: %s
 		$CONF_db_server  	= $_POST['CONF_db_server']; //server http or IP, string value use: %s
-		$CONF_db_user  		= $_POST['CONF_db_user']; //database user name, string value use: %s
+		
+/* 		$CONF_db_user  		= $_POST['CONF_db_user']; //database user name, string value use: %s
 		$CONF_db_pass  		= $_POST['CONF_db_pass']; //database password, string value use: %s
-		$CONF_db_database  	= $_POST['CONF_db_database']; //database name, string value use: %s
+		$CONF_db_database  	= $_POST['CONF_db_database']; //database name, string value use: %s */
+		
+//Neu mit einer einfachen Verschlüsselngsmethode
+		$CONF_db_user_crypt_ul  = $_POST['CONF_db_user']; //database user name, string value use: %s
+		$CONF_db_pass_crypt_ul  = $_POST['CONF_db_pass']; //database password, string value use: %s
+		$CONF_db_database_crypt_ul  = $_POST['CONF_db_database']; //database name, string value use: %s
+		
+		//Einfache Verschlüsselngsmethode
+		include("createavatar.class.php");
+		$blowfish = new caBlowfish("BY29K6CUaV5ixsNgA5URMH2s");
+		
+		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt_ul );
+		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt_ul );
+		$CONF_db_database 	= $blowfish->Encrypt( $CONF_db_database_crypt_ul );
+//Neu mit einer einfachen Verschlüsselngsmethode
 		
  		$CONF_os_SHAPE  	= $_POST['CONF_os_SHAPE']; //variable name, string value use: %s
 		$CONF_os_SKIN  		= $_POST['CONF_os_SKIN']; //variable name, string value use: %s
