@@ -131,9 +131,14 @@
 		$CONF_db_pass_crypt_ul  = $_POST['CONF_db_pass']; //database password, string value use: %s
 		$CONF_db_database_crypt_ul  = $_POST['CONF_db_database']; //database name, string value use: %s
 		
-		//Einfache Verschlüsselngsmethode
-		include("createavatar.class.php");
-		$blowfish = new caBlowfish("BY29K6CUaV5ixsNgA5URMH2s");
+		// Schauen ob blowfish.class.php schon geladen ist.
+		if (class_exists('Blowfish')) {
+			echo""; // blowfish.class.php ist schon geladen.
+		} else {
+			include("blowfish.class.php");// blowfish.class.php nachladen.
+		}
+		
+		$blowfish = new Blowfish("BY29K6CUaV5ixsNgA5URMH2s");
 		
 		$CONF_db_user 		= $blowfish->Encrypt( $CONF_db_user_crypt_ul );
 		$CONF_db_pass 		= $blowfish->Encrypt( $CONF_db_pass_crypt_ul );

@@ -21,9 +21,14 @@
 	$CONF_db_pass_crypt = $wpdb->get_var( "SELECT CONF_db_pass FROM $tablename" );
 	$CONF_db_database_crypt = $wpdb->get_var( "SELECT CONF_db_database FROM $tablename" );
 	
-	//Einfache Verschlüsselngsmethode
-	include("createavatar.class.php");
-	$blowfish = new caBlowfish("BY29K6CUaV5ixsNgA5URMH2s");
+	// Schauen ob blowfish.class.php schon geladen ist.
+	if (class_exists('Blowfish')) {
+		echo""; // blowfish.class.php ist schon geladen.
+	} else {
+		include("blowfish.class.php");// blowfish.class.php nachladen.
+	}
+	
+	$blowfish = new Blowfish("BY29K6CUaV5ixsNgA5URMH2s");
 	
 	$CONF_db_user_ut = $blowfish->Decrypt( $CONF_db_user_crypt );
 	$CONF_db_user = trim($CONF_db_user_ut);
@@ -99,7 +104,7 @@ $base_avatar = UUID_ZERO;
 		update_post_meta($post->ID, 'osNachname', $osNachname);
 	?>
 	<?php echo esc_html__( 'E-Mail :', 'oswp-createavatar' )."<br>"; ?>
-    <input type="text" name="osEMail" placeholder="john@doe.com"><br>
+    <input type="email" name="osEMail" placeholder="john@doe.com"><br>
 	<?php
 		$osEMail = sanitize_text_field($_POST['osEMail']);
 		update_post_meta($post->ID, 'osEMail', $osEMail);
